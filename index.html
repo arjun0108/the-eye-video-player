@@ -1,0 +1,59 @@
+<!-- Video Player - An open source project -->
+<!Doctype html>
+<html>
+
+<head>
+    <meta name="author" content="Arjun Thakur" />
+    <meta name="application-name" content="Video Player" />
+    <meta name="description" content="A video player created as an open source project" />
+    <title>Video Player</title>
+    
+    <link rel="stylesheet" href="assets/css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/layout.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/controls.css" type="text/css" />
+    
+    <script type="application/javascript" src="assets/js/controls.js"></script>
+    
+</head>
+
+<body>
+    
+    <div class="videoWrapper">
+        <div id="videoContainer">
+            <video id="video" controls preload="metadata" poster="vid/poster.png">
+                <source src="vid/video.mp4" type="video/mp4">
+                <!--flash fallback-->
+                <!--flash fallback code here-->
+            </video>
+        </div>
+        
+        <!--Video Player Controls-->
+        
+        <div class="video-progress">
+            <!--<span class="time-left">Time</span>
+            <span class="time-right">Time</span>-->
+            <div id="customProgressContainer">
+                <div id="customProgress" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="81.9" aria-valuetext="81.88">
+                </div>
+            </div>
+            <span class="progress">
+                <progress id="progress" value="0" min="0">
+                    <span id="progress-bar"></span>
+                </progress>
+            </span>
+
+        </div>
+        
+        <div class="video-controls" id="videoControls">
+            <div class="video-controls-left">
+            </div>
+            <div class="video-controls-center">
+            </div>
+            <div class="video-controls-right">
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
