@@ -1,4 +1,4 @@
-# video-player
+# the-eye-video-player
 A project on HTML5 Video Player
 
 This is an open source project on an HTML5 Video Player.
