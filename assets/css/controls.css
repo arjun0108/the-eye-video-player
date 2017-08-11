@@ -17,6 +17,7 @@
 .video-controls-left li{
 	display: inline-block;
 	padding: 0.5em;
+    margin: auto 0.8em;
 }
 
 
@@ -33,6 +34,15 @@
     border: 0;
     outline: 0;
     background: transparent;
+}
+
+#videoControlsAndProgress{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
 }
 
 

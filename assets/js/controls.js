@@ -120,12 +120,12 @@ $(document).ready(function(){
 	$('#videoContainer').on('mousedown, mouseup', function(){
 		$('#videoControlsAndProgress').css({'display':'block'});
 	   	clearTimeout(timeout);
-		timeout = setTimeout(function(){ $('#videoControlsAndProgress').fadeOut(500);}, 2500);
+		timeout = setTimeout(function(){ $('#videoControlsAndProgress').fadeOut(500);}, 1200);
 	});
 
 	$('#videoContainer').mousemove(function(){
 		$('#videoControlsAndProgress').css({'display':'block'});
 		clearTimeout(timeout);
-		timeout = setTimeout(function(){ $('#videoControlsAndProgress').fadeOut(500);}, 2500);
+		timeout = setTimeout(function(){ $('#videoControlsAndProgress').fadeOut(500);}, 1200);
 	});
 });
