@@ -105,3 +105,27 @@ if(supportsVideo){
 
 
 }
+/*
+var timeout;
+videoContainer.onmousemove = function(){
+	videoControlsAndProgress.style.display='block';
+	clearTimeout(timeout);
+  	timeout = setTimeout(function(){videoControlsAndProgress.style.display='none';}, 2500);
+}
+*/
+// Jquery Events 
+
+$(document).ready(function(){
+	var timeout;
+	$('#videoContainer').on('mousedown, mouseup', function(){
+		$('#videoControlsAndProgress').css({'display':'block'});
+	   	clearTimeout(timeout);
+		timeout = setTimeout(function(){ $('#videoControlsAndProgress').fadeOut(500);}, 2500);
+	});
+
+	$('#videoContainer').mousemove(function(){
+		$('#videoControlsAndProgress').css({'display':'block'});
+		clearTimeout(timeout);
+		timeout = setTimeout(function(){ $('#videoControlsAndProgress').fadeOut(500);}, 2500);
+	});
+});
