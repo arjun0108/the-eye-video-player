@@ -18,8 +18,8 @@
 
 <body>
     
-    <div class="videoWrapper">
-        <div id="videoContainer">
+    <figure id="videoContainer" class="videoContainer">
+        <div id="videoWrapper" >
             <video id="video" controls preload="metadata" poster="vid/poster.png">
                 <source src="vid/video.mp4" type="video/mp4">
                 <!--flash fallback-->
@@ -28,32 +28,58 @@
         </div>
         
         <!--Video Player Controls-->
-        
-        <div class="video-progress">
-            <!--<span class="time-left">Time</span>
-            <span class="time-right">Time</span>-->
-            <div id="customProgressContainer">
-                <div id="customProgress" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="81.9" aria-valuetext="81.88">
+        <div id="videoControlsAndProgress">
+
+            <div class="video-progress">
+                <!--<span class="time-left">Time</span>
+                <span class="time-right">Time</span>-->
+                <div id="customProgressContainer">
+                    <div id="customProgress" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="81.9" aria-valuetext="81.88">
+                    </div>
+                </div>
+                <span class="progress">
+                    <progress id="progress" value="0" min="0">
+                        <span id="progress-bar"></span>
+                    </progress>
+                </span>
+
+            </div>
+            
+            <div class="video-controls" id="videoControls">
+                <div class="video-controls-left">
+                    <ul>
+                        <li>
+                            <button id="playPause" type="button">
+                                <span class="left"></span>
+                                <span class="right"></span>
+                            </button>
+                        </li>
+                        <li>
+                            <button id="stop" type="button">
+                                <span></span>
+                            </button>
+                        </li>
+                        <li>
+                            <span id="time">
+                                00:00 / 00:00
+                            </span>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="video-controls-center">
+
+                </div>
+                <div class="video-controls-right">
                 </div>
             </div>
-            <span class="progress">
-                <progress id="progress" value="0" min="0">
-                    <span id="progress-bar"></span>
-                </progress>
-            </span>
+        </div>
+        <!--<figcaption>Video Caption Here</figcaption>-->
 
-        </div>
-        
-        <div class="video-controls" id="videoControls">
-            <div class="video-controls-left">
-            </div>
-            <div class="video-controls-center">
-            </div>
-            <div class="video-controls-right">
-            </div>
-        </div>
-        
-    </div>
+    </figure>
     
+    <script src="assets/js/controls.js" type="text/javascript" charset="utf-8">
+    </script>
+
 </body>
 </html>
