@@ -1,27 +1,44 @@
 /* Video Player - An open source project */
 
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 .video-controls{
 
 }
 
 .video-controls-left{
+    float: left;
 	width: 33.33%;
 	display: inline-block;
 }
 
-.video-controls-left ul{
+.video-controls-right{
+    text-align: right;
+    float: right;
+    width: 50%;
+    display: inline-block;
+}
+
+.video-controls-left ul,
+.video-controls-right ul{
 	display: block;
 	list-style: none;
 }
 
-.video-controls-left li{
+.video-controls-left li,
+.video-controls-right li{
 	display: inline-block;
 	padding: 0.5em;
     margin: auto 0.8em;
 }
 
 
-.video-controls-left button {
+.video-controls-left button,
+.video-controls-right button {
     cursor: pointer;
     position: relative;
     width: 100%;
@@ -95,3 +112,136 @@
 #time{
     font-size: 1.42em;
 }
+
+
+/*The Full-Screen Button*/
+
+/* The full screen button */
+#fs{
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    position: relative;
+}
+
+#fs .left,
+#fs .right{
+    position: absolute;
+    display: block;
+    top:0;
+    background: transparent;
+    height: 50%;
+}
+
+#fs .left{
+    width: 40%;
+    height: 100%;
+    left:0;
+    border-color: #fff;
+}
+
+#fs .right{
+    width: 40%;
+    height: 100%;
+    right: 0;
+}
+
+#fs .left:before, #fs .left:after,
+#fs .right:before, #fs .right:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    background-color: transparent;
+}
+
+#fs .left:before,
+#fs .left:after{
+    left: 0;
+    border-left: 2px solid #ffffff;
+}
+
+#fs .right:before,
+#fs .right:after{
+    right: 0;
+    border-right: 2px solid #ffffff;
+}
+
+#fs .left:before,
+#fs .right:before{
+    top: 0;
+    border-top: 2px solid #ffffff;
+}
+#fs .left:after,
+#fs .right:after{
+    bottom: 0;
+    border-bottom: 2px solid #ffffff;
+}
+
+#fs:hover{
+    animation: xoom 0.4s;
+}
+
+@keyframes xoom{
+    0%, 100%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+}
+
+/* Full Screen View and behaviour of Full-Screen Button */
+figure[data-fullscreen=true] video::-webkit-media-controls { display:none !important; }
+figure[data-fullscreen=true] #videoControlsAndProgress { z-index:2147483647; }
+
+figure[data-fullscreen=true] #fs{
+    width: 30px;
+    height: 30px;
+}
+figure[data-fullscreen=true] #fs .left:before,
+figure[data-fullscreen=true] #fs .left:after,
+figure[data-fullscreen=true] #fs .right:before,
+figure[data-fullscreen=true] #fs .right:after{
+    transform: rotate(180deg);
+}
+
+figure[data-fullscreen=true] #fs:hover{
+    animation: xoom-out 0.4s;
+}
+
+figure[data-fullscreen=true] .video-controls-left button,
+figure[data-fullscreen=true] .video-controls-right button{
+    width: 25px;
+    height: 25px;
+}
+
+figure[data-fullscreen=true] .controls button{ height: 25px; width: 25px; }
+figure[data-fullscreen=true] #playPause .left, 
+figure[data-fullscreen=true] #playPause .right {
+    border-top: 12.5px solid transparent;
+    border-bottom: 12.5px solid transparent;
+    border-left: 25px solid #ffffff;
+}
+
+figure[data-fullscreen=true] #playPause[data-play=true] .left,
+figure[data-fullscreen=true] #playPause[data-play=true] .right{
+    border-top: 0px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 5px solid #ffffff;
+    border-right: 0px solid transparent;
+}
+
+figure[data-fullscreen=true] #time{ font-size: 1.5em; }
+
+
+
+@keyframes xoom-out{
+    0%, 100%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(0.88);
+    }
+}
+

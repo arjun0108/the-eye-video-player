@@ -10,6 +10,7 @@ if(supportsVideo){
 	var playPause = document.getElementById('playPause');
 	var stop = document.getElementById('stop');
 	var time = document.getElementById('time');
+	var fullscreen = document.getElementById('fs');
 
 	//Hide "default" video-controls
 	video.controls = false;
@@ -63,28 +64,86 @@ if(supportsVideo){
     	time.innerHTML = getTime();
     });
 
+    // Check if the browser supports the Fullscreen API
+    var fullScreenEnabled = !!(document.fullscreenEnabled || document.mozFullScreenEnabled || document.msFullscreenEnabled || document.webkitSupportsFullscreen || document.webkitFullscreenEnabled || document.createElement('video').webkitRequestFullScreen);
+
+    // If the browser doesn't support the Fulscreen API then hide the fullscreen button
+    if (!fullScreenEnabled) {
+      fullscreen.style.display = 'none';
+    }
+
+     // Set the video container's fullscreen state
+        var setFullscreenData = function(state) {
+            videoContainer.setAttribute('data-fullscreen', !!state);
+        }
+        
+        // Checks if the document is currently in fullscreen mode
+        var isFullScreen = function() {
+            return !!(document.fullScreen || document.webkitIsFullScreen || document.mozFullScreen || document.msFullscreenElement || document.fullscreenElement);
+        }
+
+        // Fullscreen
+        var handleFullscreen = function() {
+            // If fullscreen mode is active...	
+                if (isFullScreen()) {
+                    // ...exit fullscreen mode
+                    if (document.exitFullscreen) document.exitFullscreen();
+                    else if (document.mozCancelFullScreen) document.mozCancelFullScreen();
+                    else if (document.webkitCancelFullScreen) document.webkitCancelFullScreen();
+                    else if (document.msExitFullscreen) document.msExitFullscreen();
+                    setFullscreenData(false);
+                }
+                else {
+                  // ...otherwise enter fullscreen mode
+					if (videoContainer.requestFullscreen) videoContainer.requestFullscreen();
+                  	else if (videoContainer.mozRequestFullScreen) videoContainer.mozRequestFullScreen();
+                  	else if (videoContainer.webkitRequestFullScreen) {
+						video.webkitRequestFullScreen();
+						video.removeAttribute("controls");
+                    }
+                    else if (videoContainer.msRequestFullscreen) videoContainer.msRequestFullscreen();
+                    setFullscreenData(true);
+                }
+        }
+
+        fs.addEventListener('click', function(e) {
+   			handleFullscreen();
+   		});
+        
+        document.addEventListener('fullscreenchange', function(e) {
+   			setFullscreenData(!!(document.fullScreen || document.fullscreenElement));
+   		});
+   		document.addEventListener('webkitfullscreenchange', function() {
+   			setFullscreenData(!!document.webkitIsFullScreen);
+   		});
+   		document.addEventListener('mozfullscreenchange', function() {
+   			setFullscreenData(!!document.mozFullScreen);
+   		});
+   		document.addEventListener('msfullscreenchange', function() {
+   			setFullscreenData(!!document.msFullscreenElement);
+   		});
 
 
 
 	//Functions or Handlers
 
 	// Set the play button state (True = if playing, False = if not playing)
-        var setPlayPauseData = function(state){
-            playPause.setAttribute('data-play', !!state);
-        }
-        
-        var isPlayPause = function() {
-            return !!(video.pause || video.ended);
-        }
-        
-        var handlePlayPause = function() {
-            if (isPlayPause()) {
-                setPlayPauseData(true);
-            }
-            else {
-                setPlayPauseData(false);
-            }
-        }
+	    var setPlayPauseData = function(state){
+	        playPause.setAttribute('data-play', !!state);
+	    }
+	    
+	    var isPlayPause = function() {
+	        return !!(video.pause || video.ended);
+	    }
+	    
+	    var handlePlayPause = function() {
+	        if (isPlayPause()) {
+	            setPlayPauseData(true);
+	        }
+	        else {
+	            setPlayPauseData(false);
+	        }
+	    }
         
 
 	//Play/Pause Function
@@ -113,18 +172,19 @@ videoContainer.onmousemove = function(){
   	timeout = setTimeout(function(){videoControlsAndProgress.style.display='none';}, 2500);
 }
 */
+
 // Jquery Events 
 
 $(document).ready(function(){
 	var timeout;
 	$('#videoContainer').on('mousedown, mouseup', function(){
-		$('#videoControlsAndProgress').css({'display':'block'});
+		$('#videoControlsAndProgress').fadeIn(350);
 	   	clearTimeout(timeout);
 		timeout = setTimeout(function(){ $('#videoControlsAndProgress').fadeOut(500);}, 1200);
 	});
 
 	$('#videoContainer').mousemove(function(){
-		$('#videoControlsAndProgress').css({'display':'block'});
+		$('#videoControlsAndProgress').fadeIn(350);
 		clearTimeout(timeout);
 		timeout = setTimeout(function(){ $('#videoControlsAndProgress').fadeOut(500);}, 1200);
 	});
