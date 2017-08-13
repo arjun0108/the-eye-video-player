@@ -22,3 +22,7 @@ To see the video player in action, change the **source** of the video in the fil
 - [SoundCloud](https://soundcloud.com/arjun_thakur)
 - [Instagram](https://www.instagram.com/arjun_thakur001)
 - [Facebook](http://www.facebook.com/arjun.thakur.71653)
+
+## License
+
+**the-eye** video player is licensed under the [MIT License](https://github.com/arjun0108/the-eye-video-player/blob/master/LICENSE)
