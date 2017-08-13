@@ -2,16 +2,14 @@
 
 ## Overview
 
-"the-eye" Video Player is an open source project on HTML5 Video Player
+### **"the-eye"** Video Player is an open source project on HTML5 Video Player.
 
 **Note** - Please raise issues if you find any. It would be a great help for me to improve this project.
 
 
 ## See it in action
 
-To see the video player in action, change the "source" of the video in the file "index.html". In simple, you can also add any video to the folder named "vid" and then directly write the name of the file after vid/ 
-
-Take this example - If you have added a video named "myVideo.mp4", put it in the "vid" folder. Change the src of the "source" element inside the video element in "index.html" file. It will be something like this :- 
+To see the video player in action, change the **source** of the video in the file **index.html**. Or you can use a simple way, add any video (e.g. - myVideo.mp4) to the **vid** folder and then directly write the name of the file like : 
 ```
 <source src="vid/myVideo.mp4" type="video/mp4">
 ```
