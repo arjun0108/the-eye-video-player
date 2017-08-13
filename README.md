@@ -9,7 +9,7 @@
 
 ## See it in action
 
-To see the video player in action, change the **source** of the video in the file **index.html**. Or you can use a simple way, add any video (e.g. - myVideo.mp4) to the **vid** folder and then directly write the name of the file like : 
+To see the video player in action, change the **source** of the video in the file **index.html**. Or you can use a simple way, add any video (e.g. - myVideo.mp4) to the **vid** folder and then change the **src** like : 
 ```
 <source src="vid/myVideo.mp4" type="video/mp4">
 ```
