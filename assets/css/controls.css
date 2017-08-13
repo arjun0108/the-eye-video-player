@@ -6,6 +6,16 @@
     box-sizing: border-box;
 }
 
+/* Top Bar*/
+
+.top-bar-share{
+    font-size: 20px;
+    color: white;
+    padding: 0;
+}
+
+/* Bottom Bar */
+
 .video-controls{
 
 }

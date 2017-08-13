@@ -4,6 +4,9 @@ var supportsVideo = !!document.createElement('video').canPlayType;
 if(supportsVideo){
 
 	//Setting Up Custom Controls
+	var videoTopBar = document.getElementById('videoTopBar');
+	var videoName = document.getElementById('video-name');
+	var videoSource = document.getElementById('videoSource');
 	var videoControlsAndProgress = document.getElementById('videoControlsAndProgress');
 	var videoContainer = document.getElementById('videoContainer');
 	var video = document.getElementById('video');
@@ -11,6 +14,9 @@ if(supportsVideo){
 	var stop = document.getElementById('stop');
 	var time = document.getElementById('time');
 	var fullscreen = document.getElementById('fs');
+
+	// Top Bar Stuff
+	console.log(videoSource.src.slice(0,-4))
 
 	//Hide "default" video-controls
 	video.controls = false;
@@ -179,13 +185,21 @@ $(document).ready(function(){
 	var timeout;
 	$('#videoContainer').on('mousedown, mouseup', function(){
 		$('#videoControlsAndProgress').fadeIn(350);
+		$('#videoTopBar').fadeIn(350);
 	   	clearTimeout(timeout);
-		timeout = setTimeout(function(){ $('#videoControlsAndProgress').fadeOut(500);}, 1200);
+		timeout = setTimeout(function(){ 
+			$('#videoControlsAndProgress').fadeOut(500);
+			$('#videoTopBar').fadeOut(500);
+		}, 1200);
 	});
 
 	$('#videoContainer').mousemove(function(){
 		$('#videoControlsAndProgress').fadeIn(350);
+		$('#videoTopBar').fadeIn(350);
 		clearTimeout(timeout);
-		timeout = setTimeout(function(){ $('#videoControlsAndProgress').fadeOut(500);}, 1200);
+		timeout = setTimeout(function(){ 
+			$('#videoControlsAndProgress').fadeOut(500);
+			$('#videoTopBar').fadeOut(500);
+	}, 1200);
 	});
 });

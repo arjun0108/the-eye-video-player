@@ -33,7 +33,19 @@
     object-fit: contain;
 }
 
-video-progress{
+.video-top-bar{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding:1em 0.4em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+.video-progress{
     width: 100%;
     position: absolute;
     bottom:2em;

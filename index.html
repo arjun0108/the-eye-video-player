@@ -15,7 +15,6 @@
     <script type="text/javascript" src="https://use.fontawesome.com/45c73aaa68.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="assets/js/controls.js"></script>
-    <script type="text/javascript" src="assets/js/screen.js"></script>
     
 </head>
 
@@ -24,12 +23,30 @@
     <figure id="videoContainer" class="videoContainer">
         <div id="videoWrapper" >
             <video id="video" controls preload="metadata" poster="vid/poster.png">
-                <source src="vid/video.mp4" type="video/mp4">
+                <source id="videoSource" src="vid/video.mp4" type="video/mp4">
                 <!--flash fallback-->
                 <!--flash fallback code here-->
             </video>
         </div>
         
+        <div id="videoTopBar" class="video-top-bar">
+
+            <div class="video-controls-left">
+                <h1 id="video-name"></h1>
+            </div>
+
+            <div class="video-controls-right">
+                    <ul>
+                        <li></li>
+                        <li>
+                            <button class="top-bar-share" type="button">
+                                <i class="fa fa-share"></i>
+                            </button>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+
         <!--Video Player Controls-->
         <div id="videoControlsAndProgress">
 
