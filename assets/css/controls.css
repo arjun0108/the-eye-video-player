@@ -63,16 +63,6 @@
     background: transparent;
 }
 
-#videoControlsAndProgress{
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    width: 100%;
-    box-sizing: border-box;
-    display: block;
-}
-
-
 #playPause .left, 
 #playPause .right {
     position: absolute;
