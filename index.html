@@ -15,12 +15,13 @@
     <script type="text/javascript" src="https://use.fontawesome.com/45c73aaa68.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="assets/js/controls.js"></script>
+    <script type="text/javascript" src="assets/js/interactive.js"></script>
     
 </head>
 
 <body>
-    
-    <figure id="videoContainer" class="videoContainer">
+
+    <figure id="videoContainer" class="videoContainer" onkeypress="handleKeyPress(event)">
         <div id="videoWrapper" >
             <video id="video" controls preload="metadata" poster="vid/poster.png">
                 <source id="videoSource" src="vid/video.mp4" type="video/mp4">
@@ -106,7 +107,7 @@
         <!--<figcaption>Video Caption Here</figcaption>-->
 
     </figure>
-    
+
     <script src="assets/js/controls.js" type="text/javascript" charset="utf-8">
     </script>
 

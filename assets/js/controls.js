@@ -168,6 +168,12 @@ if(supportsVideo){
         }
     }
 
+    function handleKeyPress(event) {
+        var x = event.which;
+        if(x=='32'){
+            playPauseFun(e);
+        }
+    }
 
 }
 /*

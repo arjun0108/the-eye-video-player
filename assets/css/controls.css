@@ -193,7 +193,8 @@
 
 /* Full Screen View and behaviour of Full-Screen Button */
 figure[data-fullscreen=true] video::-webkit-media-controls { display:none !important; }
-figure[data-fullscreen=true] #videoControlsAndProgress { z-index:2147483647; }
+figure[data-fullscreen=true] #videoTopBar { z-index:2147483647; }
+figure[data-fullscreen=true] #videoControlsAndProgress { z-index: 2147483647;}
 
 figure[data-fullscreen=true] #fs{
     width: 30px;
