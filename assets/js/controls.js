@@ -62,7 +62,17 @@ if(supportsVideo){
         if(totalSeconds.toString().length === 1) totalSeconds = '0' + totalSeconds;
         if(totalMinutes.toString().length === 1) totalMinutes = '0' + totalMinutes;
 
+        checkPos(minutes,seconds, totalMinutes, totalSeconds);
         return minutes + ':' +seconds + ' / ' +  totalMinutes + ':' + totalSeconds;
+    }
+
+    //Check whether video is complete or not
+    //If completed, then change the play button to pause button
+    function checkPos(min, sec, totalMin, totalSec) {
+    	if((min===totalMin) && ((sec)===totalSec)) 
+    	{
+    		setPlayPauseData(false);
+    	}
     }
 
     //Updating the time
