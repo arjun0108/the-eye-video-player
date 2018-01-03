@@ -18,6 +18,7 @@ To see the video player in action, change the **source** of the video in the fil
 
 - [LinkedIn](https://www.linkedin.com/in/arjun-thakur001/)
 - [HackerRank](https://www.hackerrank.com/arjunthakur01081)
+- [Telegram](https://t.me/arjun0108)
 - [Twitter](https://twitter.com/arjunthakur08)
 - [SoundCloud](https://soundcloud.com/arjun_thakur)
 - [Instagram](https://www.instagram.com/arjun_thakur001)
